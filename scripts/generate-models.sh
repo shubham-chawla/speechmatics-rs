@@ -3,8 +3,23 @@
 OUTPUT_BATCH_MODELS_DIRECTORY='../src/batch/models'
 OUTPUT_RT_MODELS_DIRECTORY='../src/realtime/models'
 
+# Create and activate virtual environment
+if [ ! -d ".venv" ]; then
+    python3 -m venv .venv
+fi
+source .venv/bin/activate
 
+# Upgrade pip and install wheel to help with building packages
+pip3 install --upgrade pip setuptools wheel
+
+# Install requirements
 pip3 install -r requirements.txt
+
+# Verify PyYAML was installed successfully
+if ! python3 -c "import yaml" 2>/dev/null; then
+    echo "Error: Failed to install PyYAML. Trying alternative installation method..."
+    pip3 install --no-build-isolation PyYAML==6.0
+fi
 
 # Get a 'fake' openapi spec from the async realtime-api spec (we just need the schemas)
 python3 transform_async_to_openapi.py

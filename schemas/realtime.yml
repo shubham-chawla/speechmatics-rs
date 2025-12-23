@@ -364,9 +364,20 @@ components:
           "$ref": "#/components/schemas/OperatingPoint"
         punctuation_overrides:
           "$ref": "#/components/schemas/PunctuationOverrides"
+        transcript_filtering_config:
+          "$ref": "#/components/schemas/TranscriptFilteringConfig"
 
       required:
         - language
+
+    TranscriptFilteringConfig:
+      type: object
+      description: Configuration for filtering the transcript output.
+      properties:
+        remove_disfluencies:
+          type: boolean
+          default: false
+          description: "When set to true, removes disfluencies (e.g., 'um', 'uh', 'er') from the transcript output."
 
     OperatingPoint:
       type: string
