@@ -72,6 +72,8 @@ pub mod transcription_config_punctuation_overrides;
 pub use self::transcription_config_punctuation_overrides::TranscriptionConfigPunctuationOverrides;
 pub mod transcription_config_speaker_diarization_config;
 pub use self::transcription_config_speaker_diarization_config::TranscriptionConfigSpeakerDiarizationConfig;
+pub mod transcription_config_transcript_filtering_config;
+pub use self::transcription_config_transcript_filtering_config::TranscriptionConfigTranscriptFilteringConfig;
 pub mod translation_config;
 pub use self::translation_config::TranslationConfig;
 pub mod translation_sentence;

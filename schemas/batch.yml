@@ -924,6 +924,14 @@ definitions:
               Unsupported marks are ignored. This value is used to guide the
               transcription process.
         description: Control punctuation settings.
+      transcript_filtering_config:
+        type: object
+        description: Configuration for filtering the transcript output.
+        properties:
+          remove_disfluencies:
+            type: boolean
+            default: false
+            description: "When set to true, removes disfluencies (e.g., 'um', 'uh', 'er') from the transcript output."
       diarization:
         type: string
         enum:

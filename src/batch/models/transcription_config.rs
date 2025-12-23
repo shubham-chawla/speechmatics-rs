@@ -29,6 +29,8 @@ pub struct TranscriptionConfig {
     pub additional_vocab: Option<Vec<models::TranscriptionConfigAdditionalVocabInner>>,
     #[serde(rename = "punctuation_overrides", skip_serializing_if = "Option::is_none")]
     pub punctuation_overrides: Option<Box<models::TranscriptionConfigPunctuationOverrides>>,
+    #[serde(rename = "transcript_filtering_config", skip_serializing_if = "Option::is_none")]
+    pub transcript_filtering_config: Option<Box<models::TranscriptionConfigTranscriptFilteringConfig>>,
     /// Specify whether speaker or channel labels are added to the transcript. The default is `none`.   - **none**: no speaker or channel labels are added.   - **speaker**: speaker attribution is performed based on acoustic matching;              all input channels are mixed into a single stream for processing.   - **channel**: multiple input channels are processed individually and collated             into a single transcript.
     #[serde(rename = "diarization", skip_serializing_if = "Option::is_none")]
     pub diarization: Option<Diarization>,
@@ -54,6 +56,7 @@ impl TranscriptionConfig {
             operating_point: None,
             additional_vocab: None,
             punctuation_overrides: None,
+            transcript_filtering_config: None,
             diarization: None,
             channel_diarization_labels: None,
             enable_entities: None,
