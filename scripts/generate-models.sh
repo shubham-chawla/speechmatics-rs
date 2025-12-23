@@ -3,6 +3,7 @@
 OUTPUT_BATCH_MODELS_DIRECTORY='../src/batch/models'
 OUTPUT_RT_MODELS_DIRECTORY='../src/realtime/models'
 
+
 pip3 install -r requirements.txt
 
 # Get a 'fake' openapi spec from the async realtime-api spec (we just need the schemas)
