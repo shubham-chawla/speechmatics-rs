@@ -40,6 +40,8 @@ pub struct TranscriptionConfig {
     pub speaker_change_sensitivity: Option<f32>,
     #[serde(rename = "speaker_diarization_config", skip_serializing_if = "Option::is_none")]
     pub speaker_diarization_config: Option<Box<models::SpeakerDiarizationConfig>>,
+    #[serde(rename = "transcript_filtering_config", skip_serializing_if = "Option::is_none")]
+    pub transcript_filtering_config: Option<Box<models::TranscriptFilteringConfig>>,
 }
 
 impl TranscriptionConfig {
@@ -58,6 +60,7 @@ impl TranscriptionConfig {
             punctuation_overrides: None,
             speaker_change_sensitivity: None,
             speaker_diarization_config: None,
+            transcript_filtering_config: None,
         }
     }
 }

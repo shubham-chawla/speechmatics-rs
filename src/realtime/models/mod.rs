@@ -42,6 +42,8 @@ pub mod speaker_diarization_config;
 pub use self::speaker_diarization_config::SpeakerDiarizationConfig;
 pub mod start_recognition;
 pub use self::start_recognition::StartRecognition;
+pub mod transcript_filtering_config;
+pub use self::transcript_filtering_config::TranscriptFilteringConfig;
 pub mod transcription_config;
 pub use self::transcription_config::TranscriptionConfig;
 pub mod translated_sentence;
